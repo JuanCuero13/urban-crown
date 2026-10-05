@@ -19,7 +19,7 @@ export const productos: Producto[] = [
     imagen: "/productos/gucci-rhyton-azul.jpg.jpeg",
     tallas: [ 38,39, 40, 41, 42, 43, 44],
     colores: ["Azul, Negro y Beige"],
-    etiqueta: "EDICIÓN ESPECIAL",
+    /*etiqueta: "EDICIÓN ESPECIAL",*/
   },
 
   {
