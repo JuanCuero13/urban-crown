@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+@theme {
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -12,6 +17,7 @@ html {
 
 body {
   background: #050505;
-  color: white;
-  font-family: Arial, Helvetica, sans-serif;
+  color: #f3f4f6;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
 }
