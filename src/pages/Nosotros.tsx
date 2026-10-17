@@ -2,10 +2,21 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export const Nosotros = () => {
+  const [fotoSrc, setFotoSrc] = useState("/fundador.jpg.jpeg");
   const [fotoError, setFotoError] = useState(false);
 
+  const manejarErrorFoto = () => {
+    if (fotoSrc === "/fundador.jpg.jpeg") {
+      setFotoSrc("/productos/fundador.jpg.jpeg");
+    } else if (fotoSrc === "/productos/fundador.jpg.jpeg") {
+      setFotoSrc("/fundador.jpg");
+    } else {
+      setFotoError(true);
+    }
+  };
+
   return (
-    <main className="min-h-screen bg-black text-white pt-32 pb-24 flex flex-col items-center">
+    <main className="min-h-screen bg-black text-white pt-24 sm:pt-28 pb-20 flex flex-col items-center">
       <div className="max-w-4xl w-full mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
 
         {/* =========================================
@@ -45,10 +56,10 @@ export const Nosotros = () => {
               Urban Crown nació de una idea sencilla: transformar el gusto por el estilo urbano, la calidad de los materiales y los pequeños detalles en una experiencia auténtica.
             </p>
             <p>
-              No buscamos tener de todo, ni competir por volumen. Creemos firmemente en el poder de <strong className="text-white font-medium">seleccionar con criterio</strong>. Elegir únicamente aquello que realmente merece la pena llevar y que expresa tu personalidad sin necesidad de decir una sola palabra.
+              No buscamos tener de todo, ni competir con nadie. Creemos firmemente en el poder de <strong className="text-white font-medium">seleccionar con criterio</strong>. Elegir únicamente aquello que realmente merece la pena llevar y que expresa tu personalidad sin necesidad de decir una sola palabra.
             </p>
             <p className="text-yellow-500 font-serif italic text-base sm:text-lg pt-2">
-              "Queremos que cada persona que use Urban Crown sienta seguridad, presencia y distinción en cada paso."
+              "Queremos que cada persona que compre en Urban Crown sienta seguridad, presencia y diferencia en cada paso."
             </p>
           </div>
         </section>
@@ -92,7 +103,7 @@ export const Nosotros = () => {
               <span className="text-3xl">🤝</span>
               <h3 className="font-serif font-bold text-lg text-white">Confianza Real</h3>
               <p className="text-xs text-gray-400 leading-relaxed font-light">
-                Respaldo en cada compra: pago contra entrega, atención personal y facilidad en cambios de talla por WhatsApp.
+                Respaldo en cada compra: pago contra entrega en Cali, envíos nacionales y facilidad en cambios de talla por WhatsApp.
               </p>
             </div>
 
@@ -110,17 +121,17 @@ export const Nosotros = () => {
               Liderazgo & Visión
             </span>
 
-            {/* MARCO PARA FOTO PROFESIONAL (ESTRICTAMENTE CENTRADO) */}
+            {/* MARCO PARA FOTO PROFESIONAL DE PERFIL (ESTRICTAMENTE CENTRADO) */}
             <div className="relative group flex justify-center items-center my-3 mx-auto">
               <div className="absolute -inset-1.5 bg-gradient-to-r from-yellow-600/40 via-yellow-500/30 to-yellow-600/40 rounded-full blur-md opacity-75 group-hover:opacity-100 transition duration-700" />
               
-              <div className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-full border-2 border-yellow-500/80 p-1 bg-[#111] overflow-hidden flex items-center justify-center shadow-2xl mx-auto">
+              <div className="relative w-48 h-48 sm:w-56 sm:h-56 rounded-full border-2 border-yellow-500/80 p-1 bg-[#111] overflow-hidden flex items-center justify-center shadow-2xl mx-auto">
                 {!fotoError ? (
                   <img
-                    src="/fundador.jpg"
-                    alt="Juan Carlos Cuero Villa"
-                    className="w-full h-full object-cover rounded-full"
-                    onError={() => setFotoError(true)}
+                    src={fotoSrc}
+                    alt="Juan Carlos Cuero Villa - Fundador de Urban Crown"
+                    className="w-full h-full object-cover object-[49%_44%] scale-[1.95] rounded-full transition-transform duration-500"
+                    onError={manejarErrorFoto}
                   />
                 ) : (
                   /* Avatar de alta gama con Corona si aún no ha subido su foto */

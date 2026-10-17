@@ -99,13 +99,13 @@ export const Footer = () => {
 
             <div className="grid grid-cols-2 gap-2 pt-1 text-[11px]">
               <span className="p-2 rounded bg-white/5 border border-white/10 text-gray-300 text-center font-medium">
-                📦 Contra Entrega
+                📦 Contra Entrega (Cali)
               </span>
               <span className="p-2 rounded bg-white/5 border border-white/10 text-gray-300 text-center font-medium">
                 💳 Bancolombia
               </span>
               <span className="p-2 rounded bg-white/5 border border-white/10 text-gray-300 text-center font-medium">
-                📲 Nequi / Daviplata
+                📲 Nequi
               </span>
               <span className="p-2 rounded bg-white/5 border border-white/10 text-gray-300 text-center font-medium">
                 🚚 Envío Asegurado

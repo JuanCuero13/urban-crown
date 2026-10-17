@@ -3,12 +3,12 @@ import { productos } from "../data/productos";
 import { ProductCard } from "../components/ProductCard";
 
 export const Home = () => {
-  // Tomamos el primer producto con imagen para destacarlo en el Hero
-  const productoHero = productos[0] || {
+  // El producto que esté de primero en tu lista de productos es el que se destaca en el Hero
+  const productoHero = productos.find(p => p.id === 10) || productos[0] || {
     id: 1,
-    nombre: "Gucci Rhyton Blue Edition",
-    precio: 450000,
-    imagen: "/productos/gucci-rhyton-azul.jpg.jpeg",
+    nombre: "Gucci Screener GG",
+    precio: 350000,
+    imagen: "/productos/gucci-mac80-celeste.jpg",
   };
 
   return (
@@ -17,11 +17,10 @@ export const Home = () => {
       {/* =========================
           HERO PRINCIPAL
       ========================== */}
-      <section className="min-h-[92vh] pt-32 pb-20 flex items-center relative">
+      <section className="pt-24 sm:pt-28 pb-16 relative">
 
-        {/* Luces y efectos de fondo */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0c0c0c] via-black to-black pointer-events-none" />
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] sm:w-[550px] lg:w-[750px] h-[350px] sm:h-[550px] bg-yellow-600/10 blur-[130px] rounded-full pointer-events-none" />
+        {/* Fondo sutil y sobrio (sin luces amarillas invasivas) */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] via-black to-black pointer-events-none" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
@@ -63,13 +62,10 @@ export const Home = () => {
               {/* PROPUESTA DE VALOR RÁPIDA */}
               <div className="pt-4 border-t border-white/10 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-gray-400">
                 <span className="flex items-center gap-1.5">
+                  <span className="text-yellow-500">✓</span> Contra Entrega en Cali
+                </span>
+                <span className="flex items-center gap-1.5">
                   <span className="text-yellow-500">✓</span> Envíos a todo el país
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <span className="text-yellow-500">✓</span> Pago Contra Entrega
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <span className="text-yellow-500">✓</span> Garantía de talla
                 </span>
               </div>
 
@@ -78,9 +74,6 @@ export const Home = () => {
             {/* COLUMNA VISUAL: SNEAKER DESTACADO (5 de 12) */}
             <div className="lg:col-span-5 flex justify-center">
               <div className="relative group w-full max-w-md">
-                
-                {/* Marco con halo luminoso */}
-                <div className="absolute -inset-1 bg-gradient-to-r from-yellow-600/30 to-yellow-500/10 rounded-2xl blur-xl opacity-70 group-hover:opacity-100 transition duration-1000" />
                 
                 <div className="relative bg-[#0d0d0d] border border-white/15 rounded-xl p-6 sm:p-8 overflow-hidden shadow-2xl">
                   
@@ -168,8 +161,8 @@ export const Home = () => {
                 </svg>
               </div>
               <div>
-                <h3 className="font-semibold text-sm text-white">Pago Contra Entrega</h3>
-                <p className="text-xs text-gray-400 mt-0.5">Paga seguro cuando recibas en tu puerta.</p>
+                <h3 className="font-semibold text-sm text-white">Contra Entrega (Cali)</h3>
+                <p className="text-xs text-gray-400 mt-0.5">Paga seguro en efectivo al recibir en Cali.</p>
               </div>
             </div>
 
@@ -270,10 +263,28 @@ export const Home = () => {
 
           <div className="w-12 h-0.5 bg-yellow-500 mx-auto my-8" />
 
-          <p className="text-sm text-gray-300 uppercase tracking-widest font-semibold">
+          {/* FOTO DE PERFIL DEL FUNDADOR */}
+          <div className="relative w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-4 group">
+            <div className="absolute -inset-1 bg-yellow-500/30 rounded-full blur-sm group-hover:bg-yellow-500/50 transition duration-500" />
+            <div className="relative w-full h-full rounded-full border-2 border-yellow-500 p-0.5 bg-black overflow-hidden shadow-xl">
+              <img
+                src="/fundador.jpg.jpeg"
+                alt="Juan Carlos Cuero Villa"
+                className="w-full h-full object-cover object-[49%_44%] scale-[1.95] rounded-full transition-transform duration-500"
+                onError={(e) => {
+                  const target = e.currentTarget;
+                  if (target.src.includes("/fundador.jpg.jpeg")) {
+                    target.src = "/productos/fundador.jpg.jpeg";
+                  }
+                }}
+              />
+            </div>
+          </div>
+
+          <p className="text-sm sm:text-base text-gray-200 uppercase tracking-widest font-semibold">
             Juan Carlos Cuero Villa
           </p>
-          <p className="text-xs text-gray-500 mt-1">
+          <p className="text-xs text-yellow-500/90 mt-1 uppercase tracking-wider font-medium">
             Fundador de Urban Crown
           </p>
 

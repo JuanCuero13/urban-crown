@@ -81,12 +81,12 @@ export const ProductoDetalle = () => {
       content: (
         <div className="space-y-2">
           <p>
-            Despachos a toda Colombia con transportadoras aliadas (Interrapidísimo, Servientrega y Envía).
+            Despachos a toda Colombia con transportadoras a su preferencia (Interrapidísimo, Servientrega y Envía).
           </p>
           <ul className="list-disc list-inside space-y-1 text-gray-400">
             <li>Ciudades principales: 2 a 4 días hábiles.</li>
             <li>Municipios secundarios: 3 a 5 días hábiles.</li>
-            <li>Opción de <strong>Pago Contra Entrega</strong> disponible según cobertura.</li>
+            <li>Opción de <strong>Pago Contra Entrega exclusivo para Cali</strong> (envíos nacionales asegurados previa consignación).</li>
           </ul>
         </div>
       ),
@@ -117,7 +117,7 @@ export const ProductoDetalle = () => {
   ];
 
   return (
-    <main className="min-h-screen bg-black text-white pt-28 sm:pt-32 pb-24">
+    <main className="min-h-screen bg-black text-white pt-24 sm:pt-28 pb-20">
       
       {/* MODAL DE GUÍA DE TALLAS */}
       <SizeGuideModal
@@ -175,7 +175,7 @@ export const ProductoDetalle = () => {
                   Fotografía real del modelo
                 </span>
                 <span className="uppercase tracking-widest text-[10px] text-yellow-500/80">
-                  Urban Crown Originals
+                  Urban Crown
                 </span>
               </div>
 
@@ -209,7 +209,7 @@ export const ProductoDetalle = () => {
               </div>
 
               <p className="mt-2 text-xs text-green-400 font-medium flex items-center gap-1.5">
-                <span>✓</span> Envío a toda Colombia • Pago Contra Entrega disponible
+                <span>✓</span> Envíos a toda Colombia • Contra Entrega exclusivo en Cali
               </p>
             </div>
 

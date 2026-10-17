@@ -21,7 +21,7 @@ export const Productos = () => {
   });
 
   return (
-    <main className="min-h-screen bg-black text-white pt-32 pb-24">
+    <main className="min-h-screen bg-black text-white pt-24 sm:pt-28 pb-20">
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* ENCABEZADO */}
@@ -38,31 +38,34 @@ export const Productos = () => {
             Selección de calzado urbano y sneakers con acabados de primera calidad.
           </p>
 
-          {/* BUSCADOR ELEGANTE */}
+          {/* BUSCADOR ELEGANTE (Lupa a la derecha que se oculta al escribir) */}
           <div className="max-w-md mx-auto mt-8 relative">
             <input
               type="text"
               value={busqueda}
               onChange={(e) => setBusqueda(e.target.value)}
               placeholder="Buscar por modelo o color..."
-              className="w-full bg-[#0c0c0c] border border-white/15 px-5 py-3.5 pl-11 text-sm text-white placeholder:text-gray-500 rounded-md outline-none focus:border-yellow-500 transition shadow-inner"
+              className="w-full bg-[#0d0d0d] border border-white/15 px-4 py-3 pr-11 text-sm text-white placeholder:text-gray-500 rounded-lg outline-none focus:border-yellow-500/80 transition"
             />
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-4 h-4 text-gray-400 absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-            </svg>
-            {busqueda && (
+            {busqueda ? (
               <button
+                type="button"
                 onClick={() => setBusqueda("")}
-                className="absolute right-3.5 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white text-xs"
+                aria-label="Limpiar búsqueda"
+                className="absolute right-3.5 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white w-6 h-6 flex items-center justify-center rounded-full hover:bg-white/10 transition text-xs"
               >
                 ✕
               </button>
+            ) : (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-4 h-4 text-gray-400 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
             )}
           </div>
 

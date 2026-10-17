@@ -14,22 +14,22 @@ export interface Producto {
 export const productos: Producto[] = [
   {
     id: 1,
-    nombre: "Off-White Out Of Office White Black",
-    precio: 420000,
+    nombre: "Gucci Re-Web",
+    precio: 370000,
     descripcion:
-      "Silueta icónica de estética retro inspirada en el tenis de los 90. Confeccionada con la emblemática flecha lateral de Virgil Abloh, etiqueta colgante Zip-Tie y cordones impresos 'SHOELACES'.",
-    imagen: "/productos/off-white-out-of-office.jpg",
-    tallas: [38, 39, 40, 41, 42, 43, 44],
-    colores: ["Blanco y Negro"],
-    etiqueta: "DROP EXCLUSIVO",
+      "Elegancia retro indiscutible con tejido Jacquard monograma GG en tono azul celeste, ribetes de cuero marfil y cinta Web verde y roja en la lengüeta. La silueta vintage de lujo más codiciada.",
+    imagen: "/productos/gucci-mac80-celeste.jpg",
+    tallas: [38, 39, 40, 41, 42, 43],
+    colores: ["Celeste y Marfil"],
+    etiqueta: "DROP DESTACADO",
     categoria: "Sneakers",
-    materiales: "Cuero vacuno premium seleccionado, suela bicolor con inserciones de goma dentada y plantilla acolchada de alto confort.",
+    materiales: "Lona Jacquard con monograma GG bordado, remates en cuero liso marfil y suela de goma con tracción estriada.",
   },
 
   {
     id: 2,
     nombre: "Balenciaga Track LED White Edition",
-    precio: 460000,
+    precio: 450000,
     descripcion:
       "El pináculo del diseño de calzado futurista. Construcción multicapa hiperestructurada con sistema de iluminación LED recargable en el talón. Incluye cable USB de carga y cordones de recambio.",
     imagen: "/productos/balenciaga-track-led-blanco.jpg",
@@ -56,22 +56,22 @@ export const productos: Producto[] = [
 
   {
     id: 4,
-    nombre: "Gucci Reb-Web Sky",
-    precio: 350000,
+    nombre: "Off-White Out Of Office White Black",
+    precio: 420000,
     descripcion:
-      "Elegancia retro indiscutible con tejido Jacquard monograma GG en tono azul celeste, ribetes de cuero marfil y cinta Web verde y roja en la lengüeta. Distinción pura para cualquier ocasión.",
-    imagen: "/productos/gucci-mac80-celeste.jpg",
-    tallas: [38, 39, 40, 41, 42, 43],
-    colores: ["Celeste y Marfil"],
-    etiqueta: "TENDENCIA",
+      "Silueta icónica de estética retro inspirada en el tenis de los 90. Confeccionada con la emblemática flecha lateral de Virgil Abloh, etiqueta colgante Zip-Tie y cordones impresos 'SHOELACES'.",
+    imagen: "/productos/off-white-out-of-office.jpg",
+    tallas: [38, 39, 40, 41, 42, 43, 44],
+    colores: ["Blanco y Negro"],
+    etiqueta: "DROP EXCLUSIVO",
     categoria: "Sneakers",
-    materiales: "Lona Jacquard con monograma GG bordado, remates en cuero liso marfil y suela de goma con tracción estriada.",
+    materiales: "Cuero vacuno premium seleccionado, suela bicolor con inserciones de goma dentada y plantilla acolchada.",
   },
 
   {
     id: 5,
     nombre: "Balenciaga Track Pink Monochrome",
-    precio: 460000,
+    precio: 450000,
     descripcion:
       "Propuesta maximalista en tono rosa pastel de gran carácter. Diseño de silueta chunky con cordones dobles entrecruzados, paneles calados y presencia imponente.",
     imagen: "/productos/balenciaga-track-pink.jpg",
@@ -98,7 +98,7 @@ export const productos: Producto[] = [
 
   {
     id: 7,
-    nombre: "Gucci Rhyton Blue Edition",
+    nombre: "Gucci Rhyton Blue ",
     precio: 450000,
     descripcion:
       "Diseño urbano de estilo chunky y presencia imponente. Confeccionado con paneles de alta durabilidad y detalles en contraste para destacar en cualquier ocasión.",
@@ -137,4 +137,19 @@ export const productos: Producto[] = [
     categoria: "Sandalias",
     materiales: "Correas en textil estampado monograma, herraje con acabado dorado y suela antideslizante.",
   },
+
+  {
+    id: 10,
+    nombre: "Gucci Screener GG",
+    precio: 420000,
+    descripcion:
+      "Diseño retro en tonos beige y verde, con detalles rojos y acabados desgastados. Ideal para complementar tu estilo urbano con un toque premium.",
+    imagen: "/productos/gucci-screener gg.jpeg",
+    tallas: [40, 41, 42, 43, 44],
+    colores: ["Verde vintage"],
+    etiqueta: "DESTACADO",
+    categoria: "Sneakers",
+    materiales: "Materiales sintéticos y textiles",
+  },
+
 ];

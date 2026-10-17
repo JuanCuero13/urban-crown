@@ -14,7 +14,7 @@ export const Carrito = () => {
   const [nombre, setNombre] = useState("");
   const [ciudad, setCiudad] = useState("");
   const [direccion, setDireccion] = useState("");
-  const [metodoPago, setMetodoPago] = useState("Contra Entrega");
+  const [metodoPago, setMetodoPago] = useState("Contra Entrega (Solo Cali)");
   const [errorValidacion, setErrorValidacion] = useState("");
 
   const total = carrito.reduce(
@@ -62,7 +62,7 @@ export const Carrito = () => {
   };
 
   return (
-    <main className="min-h-screen bg-black text-white pt-28 sm:pt-32 pb-24">
+    <main className="min-h-screen bg-black text-white pt-24 sm:pt-28 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* ENCABEZADO */}
@@ -291,20 +291,20 @@ export const Carrito = () => {
                   <div className="grid grid-cols-2 gap-2">
                     <button
                       type="button"
-                      onClick={() => setMetodoPago("Contra Entrega")}
+                      onClick={() => setMetodoPago("Contra Entrega (Solo Cali)")}
                       className={`p-2.5 text-xs text-left rounded border transition ${
-                        metodoPago === "Contra Entrega"
+                        metodoPago.includes("Contra Entrega")
                           ? "border-yellow-500 bg-yellow-950/20 text-yellow-400 font-bold"
                           : "border-white/10 bg-white/5 text-gray-400 hover:border-white/30"
                       }`}
                     >
                       <span className="block text-[11px] font-bold">📦 Contra Entrega</span>
-                      <span className="text-[10px] text-gray-400">Pagas al recibir</span>
+                      <span className="text-[10px] text-gray-400">Exclusivo en Cali</span>
                     </button>
 
                     <button
                       type="button"
-                      onClick={() => setMetodoPago("Transferencia (Nequi/Bancolombia)")}
+                      onClick={() => setMetodoPago("Transferencia (Nacional / Nequi / Bancolombia)")}
                       className={`p-2.5 text-xs text-left rounded border transition ${
                         metodoPago.includes("Transferencia")
                           ? "border-yellow-500 bg-yellow-950/20 text-yellow-400 font-bold"
@@ -312,9 +312,12 @@ export const Carrito = () => {
                       }`}
                     >
                       <span className="block text-[11px] font-bold">💳 Transferencia</span>
-                      <span className="text-[10px] text-gray-400">Nequi / Bancolombia</span>
+                      <span className="text-[10px] text-gray-400">Nacional / Nequi / Bancolombia</span>
                     </button>
                   </div>
+                  <p className="text-[11px] text-gray-400 mt-2 leading-relaxed">
+                    * El pago <strong>Contra Entrega</strong> aplica para entregas en <strong>Cali</strong>. Para el resto de Colombia los envíos se despachan con transportadora previa transferencia.
+                  </p>
                 </div>
 
               </div>
